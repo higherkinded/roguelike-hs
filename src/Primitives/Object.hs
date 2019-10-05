@@ -3,19 +3,15 @@ module Primitives.Object
   ) where
 
 
-import Data.Map.Strict
+import Primitives.Meta
+import Primitives.Representation
 
 
-class Object a where
-  properties :: a -> [Property]
-
-
-class Named a where
-  name :: a -> String
-
-
-data Property = Property String Int
-  deriving (Show, Eq)
-
-
-
+data Object =
+  StaticObject  { meta           :: Meta
+                , representation :: Representation
+                } |
+  DynamicObject { meta           :: Meta
+                , mass           :: Int
+                , representation :: Representation
+                }

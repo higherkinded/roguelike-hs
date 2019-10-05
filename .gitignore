@@ -1,4 +1,5 @@
 .ghc*
+.cabal-sandbox
 dist
 dist-newstyle
 *~*
